@@ -4,70 +4,70 @@
 
 #include "lista.h"
 
-void createList(TList *l)
+void listaCria(lista *l)
 {
-  l->first = (TCell *) malloc(sizeof(TCell));
-  l->last = l->first;
-  l->last->next = NULL;
+  l->inicio = (celula *) malloc(sizeof(celula));
+  l->fim = l->inicio;
+  l->fim->prox = NULL;
   }
 
-int isEmpty(TList *l)
+int listaVazia(lista *l)
 {
-  return l->first == l->last;
+  return l->inicio == l->fim;
 }
 
-void insertCell(TList *l, void *data, unsigned int size)
+void listaInsere(lista *l, void *data, unsigned int size)
 {
-  l->last->next = (TCell *) malloc(sizeof(TCell));
-  l->last = l->last->next;
-  l->last->data = malloc(size);
-  memcpy(l->last->data, data, size);
-  l->last->next = NULL;
+  l->fim->prox = (celula *) malloc(sizeof(celula));
+  l->fim = l->fim->prox;
+  l->fim->data = malloc(size);
+  memcpy(l->fim->data, data, size);
+  l->fim->prox = NULL;
 }
 
-void* retrieveData(TList *l, int (*func)(void *, void *), void *param)
+void* listaRetorna(lista *l, int (*func)(void *, void *), void *param)
 {
-  TCell *p;
+  celula *p;
  
-  p = l->first->next;
+  p = l->inicio->prox;
   while(p != NULL){
     if (func(p->data, param))
       return p->data;
-    p = p->next;
+    p = p->prox;
   }
   return NULL;
 }
 
-int removeCell(TList *l, int (*func)(void *, void *), void *param)
+int listaRemove(lista *l, int (*func)(void *, void *), void *param)
 {
-  TCell *p, *aux;
+  celula *p, *aux;
  
-  p = l->first;
-  while(p->next != NULL){
-    if (func(p->next->data, param)){
-      aux = p->next;
-      p->next = aux->next;
+  p = l->inicio;
+  while(p->prox != NULL){
+    if (func(p->prox->data, param)){
+      aux = p->prox;
+      p->prox = aux->prox;
  
-      if (aux == l->last)
-        l->last = p;
+      if (aux == l->fim)
+        l->fim = p;
  
       free(aux->data);
       free(aux);
       return 1;
     }
-    p = p->next;
+    p = p->prox;
   }
   return 0;
 }
 
-void freeList(TList *l)
+void listaFree(lista *l)
 {
-  TCell *aux;
-  while(l->first->next != NULL){
-    aux = l->first->next;
-    l->first->next = aux->next;
+  celula *aux;
+  while(l->inicio->prox != NULL){
+    aux = l->inicio->prox;
+    l->inicio->prox = aux->prox;
     free(aux->data);
     free(aux);
   }
-  free(l->first);
+  free(l->inicio);
 }
