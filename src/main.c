@@ -13,7 +13,7 @@ int main(int argc, char **argv) {
 	FILE *entrada;
 	char leituras[5], leitura2[5];
 
-	int nElementos;
+	int nElementos, maiorElem = 0;
 	int i, j, k;
 	int reflexiva, irreflexiva, simetrica, assimetrica, antiSimetrica,
 			transitiva, equivalencia, ordemParcial;
@@ -29,15 +29,16 @@ int main(int argc, char **argv) {
 	// aloca o vetor de elementos
 	elementos = malloc(sizeof(int) * nElementos);
 
-	// inicia o grafo das relações
-	grafoInicia(nElementos, &relacoes);
-
 	// adiciona elementos do conjunto no vetor de conjuntos
 	for(i=0;i<nElementos;i+=1)
 	{
 		fscanf(entrada, "%s", leituras);
 		elementos[i] = atoi(leituras);
+		if(elementos[i] > maiorElem) maiorElem = elementos[i];
 	}
+
+	// inicia o grafo das relações
+	grafoInicia((maiorElem+1), &relacoes);
 
 	// adiciona relações dos elementos no grafo de relações
 	while(!feof(entrada))
