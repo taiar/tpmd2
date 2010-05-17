@@ -25,6 +25,7 @@ void listaInsere(lista *l, void *data, unsigned int size)
   l->fim->prox = NULL;
 }
 
+// atenção para a passagem de função como parâmetro!!
 void* listaRetorna(lista *l, int (*func)(void *, void *), void *param)
 {
   celula *p;
@@ -71,3 +72,21 @@ void listaFree(lista *l)
   }
   free(l->inicio);
 }
+
+/**
+ * Métodos relativos à inserção de items na lista
+ */
+void insereRegistro(lista *l, int a, int b)
+{
+	par p;
+
+	p.a = a;
+	p.b = b;
+	listaInsere(l, (void *) &p, sizeof(par));
+}
+
+void mostraRegistro(par *p)
+{
+
+}
+
