@@ -22,16 +22,19 @@ typedef struct {
 void listaCria(lista*);
 int listaVazia(lista*);
 void listaInsere(lista*, void*, unsigned int);
-void* listaRetorna(lista*, int(*func)(void *, void*), void*);
-int listaRemove(lista*, int(*func)(void*, void*), void*);
+void* listaRetornaBusca(lista*, int(*func)(void *, void*), void*);
+//void* listaRetorna(lista*);
+void listaRetorna(lista*, int*);
+int listaRemoveBusca(lista*, int(*func)(void*, void*), void*);
+int listaRemove(lista*, void*);
 void listaFree(lista*);
 
 /**
  * Métodos relativos à inserção de items na lista
  */
 
-void insereRegistro(lista *, int, int);
-void mostraRegistro(par*);
+void listaInsereRegistro(lista *, int, int);
+void listaMostraRegistro(par*, int*);
 /* int comparaRegistro(void *reg) */
 
 #endif

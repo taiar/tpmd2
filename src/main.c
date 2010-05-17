@@ -15,7 +15,7 @@ int main(int argc, char **argv) {
 	}
 
 	FILE *entrada;
-	char leituras[5];
+	char leituras[5], leituras2[5];
 
 	int nElementos, e1, e2;
 	int i, j, k;
@@ -44,21 +44,24 @@ int main(int argc, char **argv) {
 	grafoInicia(nElementos, &relacoes);
 
 	// adiciona relações dos elementos no grafo de relações
-	while (!feof(entrada)) {
-		fscanf(entrada, "%s", leituras);
+	do{
+		fscanf(entrada, "%s %s\n", leituras, leituras2);
 		e1 = atoi(leituras);
-		fscanf(entrada, "%s", leituras);
-		e2 = atoi(leituras);
+		e2 = atoi(leituras2);
 		grafoInsereAresta(encontraElemento(elementos, nElementos, e1),
 				encontraElemento(elementos, nElementos, e2), 1, &relacoes);
-	}
+	} while(!feof(entrada));
 
 	fclose(entrada);
 
 	grafoImprime(&relacoes);
 
+	listaCria(&pares);
 	// interpretação e classificação das relações no grafo
 	reflexiva = avaliaReflexiva(&relacoes, &pares);
+	if (!reflexiva) {
+		listaRetorna(&pares, elementos);
+	}
 
 	// libera meméria
 	free(elementos);
