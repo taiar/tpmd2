@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 #include "grafo.h"
 #include "lista.h"
+#include "relacoes.h"
 
 int encontraElemento(int*, int, int);
 
@@ -21,6 +23,7 @@ int main(int argc, char **argv) {
 			transitiva, equivalencia, ordemParcial;
 	int *elementos;
 	grafo relacoes;
+	lista pares;
 
 	entrada = fopen(argv[1], "r");
 
@@ -46,12 +49,16 @@ int main(int argc, char **argv) {
 		e1 = atoi(leituras);
 		fscanf(entrada, "%s", leituras);
 		e2 = atoi(leituras);
-		grafoInsereAresta(encontraElemento(elementos, nElementos, e1), encontraElemento(elementos, nElementos, e2), 1, &relacoes);
+		grafoInsereAresta(encontraElemento(elementos, nElementos, e1),
+				encontraElemento(elementos, nElementos, e2), 1, &relacoes);
 	}
 
 	fclose(entrada);
 
 	grafoImprime(&relacoes);
+
+	// interpretação e classificação das relações no grafo
+	reflexiva = avaliaReflexiva(&relacoes, &pares);
 
 	// libera meméria
 	free(elementos);
@@ -62,7 +69,8 @@ int main(int argc, char **argv) {
 int encontraElemento(int *v, int tam, int elem) {
 	int i;
 	for (i = 0; i < tam; i += 1)
-		if(v[i] == elem) return i;
+		if (v[i] == elem)
+			return i;
 	return -1;
 
 }
