@@ -8,6 +8,7 @@ void listaCria(lista *l) {
 	l->inicio = (celula *) malloc(sizeof(celula));
 	l->fim = l->inicio;
 	l->fim->prox = NULL;
+	l->tam = 0;
 }
 
 int listaVazia(lista *l) {
@@ -20,6 +21,7 @@ void listaInsere(lista *l, void *data, unsigned int size) {
 	l->fim->data = malloc(size);
 	memcpy(l->fim->data, data, size);
 	l->fim->prox = NULL;
+	l->tam += 1;
 }
 
 // atenção para a passagem de função como parâmetro!!
@@ -36,29 +38,55 @@ void* listaRetornaBusca(lista *l, int(*func)(void *, void *), void *param) {
 }
 
 /* void* listaRetorna(lista *l) {
-	celula *p, *aux;
+ celula *p, *aux;
 
-	p = l->inicio->prox;
-	if (p != NULL) {
-		l->inicio->prox = p->prox;
-		aux = p;
-		return p->data;
-	}
-	return NULL;
-}*/
+ p = l->inicio->prox;
+ if (p != NULL) {
+ l->inicio->prox = p->prox;
+ aux = p;
+ return p->data;
+ }
+ return NULL;
+ }*/
 
 void listaRetorna(lista *l, int *v) {
 	celula *p, *aux;
 
-	p = l->inicio->prox;
-	while (p != NULL) {
+	p = l->inicio;
+	while (p->prox != NULL) {
 		l->inicio->prox = p->prox;
-		aux = p;
+		aux = p->prox;
+		p->prox = aux->prox;
+
 		listaMostraRegistro(aux->data, v);
+
+		if (aux == l->fim)
+			l->fim = p;
+		free(aux->data);
 		free(aux);
-		p = p->prox;
 	}
-	free(l->inicio);
+	l->tam = 0;
+}
+
+void listaRetornaSimetrico(lista *l, int *v) {
+	celula *p, *aux, *aux2, *aux3;
+
+	p = l->inicio;
+	while (p->prox != NULL) {
+		l->inicio->prox = p->prox;
+		aux = p->prox;
+		p->prox = aux->prox;
+
+		listaMostraRegistroSimetrico(aux->data, v);
+		//remove registro simetrico da lista
+		//TODO: remover registros simetricos
+
+		if (aux == l->fim)
+			l->fim = p;
+		free(aux->data);
+		free(aux);
+	}
+	l->tam = 0;
 }
 
 int listaRemoveBusca(lista *l, int(*func)(void *, void *), void *param) {
@@ -108,3 +136,6 @@ void listaMostraRegistro(par *p, int *v) {
 	printf("(%d, %d); ", v[p->a], v[p->b]);
 }
 
+void listaMostraRegistroSimetrico(par *p, int *v) {
+	printf("(%d, %d) e (%d, %d); ", v[p->a], v[p->b], v[p->b], v[p->a]);
+}

@@ -44,14 +44,16 @@ int main(int argc, char **argv) {
 	grafoInicia(nElementos, &relacoes);
 
 	// adiciona relações dos elementos no grafo de relações
-	do{
+	do {
 		fscanf(entrada, "%s %s\n", leituras, leituras2);
 		e1 = atoi(leituras);
 		e2 = atoi(leituras2);
 		grafoInsereAresta(encontraElemento(elementos, nElementos, e1),
 				encontraElemento(elementos, nElementos, e2), 1, &relacoes);
-	} while(!feof(entrada));
+	} while (!feof(entrada));
 	fclose(entrada);
+
+	grafoImprime(&relacoes);
 
 	listaCria(&pares);
 
@@ -72,9 +74,31 @@ int main(int argc, char **argv) {
 
 	printf("2. Irreflexiva: ");
 	irreflexiva = avaliaIrreflexiva(&relacoes, &pares);
-	if(!irreflexiva) {
+	if (!irreflexiva) {
 		printf("F\n   ");
 		listaRetorna(&pares, elementos);
+		printf("\n");
+	} else {
+		printf("V");
+		printf("\n");
+	}
+
+	printf("3. Simétrica: ");
+	simetrica = avaliaSimetrica(&relacoes, &pares);
+	if (!simetrica) {
+		printf("F\n   ");
+		listaRetorna(&pares, elementos);
+		printf("\n");
+	} else {
+		printf("V");
+		printf("\n");
+	}
+
+	printf("4. Anti-simétrica: ");
+	antiSimetrica = avaliaAntiSimetrica(&relacoes, &pares);
+	if (!antiSimetrica) {
+		printf("F\n   ");
+		listaRetornaSimetrico(&pares, elementos);
 		printf("\n");
 	} else {
 		printf("V");

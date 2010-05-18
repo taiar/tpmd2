@@ -1,4 +1,3 @@
-
 #ifndef _LISTA_H_
 #define _LISTA_H_
 
@@ -9,6 +8,7 @@ typedef struct cell {
 
 typedef struct {
 	celula *inicio, *fim;
+	int tam;
 } lista;
 
 /**
@@ -25,6 +25,7 @@ void listaInsere(lista*, void*, unsigned int);
 void* listaRetornaBusca(lista*, int(*func)(void *, void*), void*);
 //void* listaRetorna(lista*);
 void listaRetorna(lista*, int*);
+void listaRetornaSimetrico(lista*, int*);
 int listaRemoveBusca(lista*, int(*func)(void*, void*), void*);
 int listaRemove(lista*, void*);
 void listaFree(lista*);
@@ -35,6 +36,7 @@ void listaFree(lista*);
 
 void listaInsereRegistro(lista *, int, int);
 void listaMostraRegistro(par*, int*);
+void listaMostraRegistroSimetrico(par*, int*);
 /* int comparaRegistro(void *reg) */
 
 #endif
