@@ -105,6 +105,6 @@ void listaInsereRegistro(lista *l, int a, int b) {
 }
 
 void listaMostraRegistro(par *p, int *v) {
-	printf("{%d, %d}\n", v[p->a], v[p->b]);
+	printf("(%d, %d); ", v[p->a], v[p->b]);
 }
 

@@ -18,7 +18,7 @@ int main(int argc, char **argv) {
 	char leituras[5], leituras2[5];
 
 	int nElementos, e1, e2;
-	int i, j, k;
+	int i;
 	int reflexiva, irreflexiva, simetrica, assimetrica, antiSimetrica,
 			transitiva, equivalencia, ordemParcial;
 	int *elementos;
@@ -51,16 +51,34 @@ int main(int argc, char **argv) {
 		grafoInsereAresta(encontraElemento(elementos, nElementos, e1),
 				encontraElemento(elementos, nElementos, e2), 1, &relacoes);
 	} while(!feof(entrada));
-
 	fclose(entrada);
 
-	grafoImprime(&relacoes);
-
 	listaCria(&pares);
-	// interpretação e classificação das relações no grafo
+
+	/**
+	 * Aqui começa a geração da saída
+	 */
+	printf("Propriedades\n");
+	printf("1. Reflexiva: ");
 	reflexiva = avaliaReflexiva(&relacoes, &pares);
 	if (!reflexiva) {
+		printf("F\n   ");
 		listaRetorna(&pares, elementos);
+		printf("\n");
+	} else {
+		printf("V");
+		printf("\n");
+	}
+
+	printf("2. Irreflexiva: ");
+	irreflexiva = avaliaIrreflexiva(&relacoes, &pares);
+	if(!irreflexiva) {
+		printf("F\n   ");
+		listaRetorna(&pares, elementos);
+		printf("\n");
+	} else {
+		printf("V");
+		printf("\n");
 	}
 
 	// libera meméria
