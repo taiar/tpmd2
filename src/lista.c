@@ -115,6 +115,11 @@ int compareSimetrico(void *x, void *y) {
    return 0;
 }   
 
+int compare(void *x, void *y) {
+   if (((par*)x)->a == ((par*)y)->a && ((par*)x)->b == ((par*)y)->b)
+     return 1;
+   return 0;
+}
 
 /**
  * Métodos relativos à inserção de items na lista

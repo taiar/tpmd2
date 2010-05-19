@@ -23,7 +23,7 @@ int main(int argc, char **argv) {
 			transitiva;
 	int *elementos;
 	grafo relacoes;
-	lista pares;
+	lista pares, fechoTransitivo;
 
 	entrada = fopen(argv[1], "r");
 
@@ -53,9 +53,8 @@ int main(int argc, char **argv) {
 	} while (!feof(entrada));
 	fclose(entrada);
 
-	//grafoImprime(&relacoes);
-
 	listaCria(&pares);
+  listaCria(&fechoTransitivo);
 
 	/**
 	 * Aqui começa a geração da saída
@@ -109,15 +108,13 @@ int main(int argc, char **argv) {
 	assimetrica = avaliaAssimetrica(&relacoes, &pares);
 	if (!assimetrica) {
 		printf("F\n");
-		//listaRetorna(&pares, elementos);
-		//printf("\n");
 	} else {
 		printf("V");
 		printf("\n");
   }
 
   printf("6. Transitiva: ");
-	transitiva = avaliaTransitiva(&relacoes, &pares);
+	transitiva = avaliaTransitiva(&relacoes, &pares, &fechoTransitivo);
 	if (!transitiva) {
 		printf("F\n   ");
 		listaRetorna(&pares, elementos);
@@ -133,11 +130,15 @@ int main(int argc, char **argv) {
   printf("\n");
 
   printf("Fecho transitivo da relação = {");
+  listaRetorna(&fechoTransitivo, elementos);
   printf("}\n");
 
 
-	// libera meméria
+	// libera memória
 	free(elementos);
+  grafoFree(&relacoes);
+  listaFree(&pares);
+  listaFree(&fechoTransitivo);
 
 	return EXIT_SUCCESS;
 }
@@ -148,5 +149,5 @@ int encontraElemento(int *v, int tam, int elem) {
 		if (v[i] == elem)
 			return i;
 	return -1;
-
 }
+

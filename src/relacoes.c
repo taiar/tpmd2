@@ -1,3 +1,5 @@
+#include <stdlib.h>
+
 #include "relacoes.h"
 
 int avaliaReflexiva(grafo *g, lista *l) {
@@ -36,7 +38,7 @@ int avaliaSimetrica(grafo *g, lista *l) {
 
 int avaliaAntiSimetrica(grafo *g, lista *l) {
 	int i, j, okFlag = 1;
-  par *a;
+  par *a = malloc(sizeof(par));
 	for (i = 0; i < g->nNos; i += 1) {
 		for (j = 0; j < g->nNos; j += 1) {
 			if (g->matriz[i][j] && g->matriz[j][i]) {
@@ -50,6 +52,7 @@ int avaliaAntiSimetrica(grafo *g, lista *l) {
 			}
 		}
 	}
+  free(a);
 	return okFlag;
 }
 
@@ -74,21 +77,29 @@ int avaliaAssimetrica(grafo *g, lista *l) {
   return okFlag;
 }
 
-int avaliaTransitiva(grafo *g, lista *l)
+int avaliaTransitiva(grafo *g, lista *l, lista *s)
 {
   int i, j, k, okFlag = 1;
+  par *a = malloc(sizeof(par));
   for(i = 0; i < g->nNos; i += 1) {
     for(j = 0; j < g->nNos; j += 1) {
       for(k = 0; k < g->nNos; k += 1) {
-        if(g->matriz[i][j] == 1)
-          if(g->matriz[j][k] == 1)
+        if(g->matriz[i][j] == 1) {
+          if(g->matriz[j][k] == 1) {
             if(g->matriz[i][k] != 1) {
               okFlag = 0;
-              listaInsereRegistro(l, i, k);
+              a->a=i;a->b=k;
+              if(!listaRetornaBusca(s, compare, (void *)a)) {
+                listaInsereRegistro(l, i, k);
+                listaInsereRegistro(s, i, k);
+              }
             }
+          }
+        }
       }
     }
   }
+  free(a);
   return okFlag;
 }
 
