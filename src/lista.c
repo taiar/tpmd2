@@ -37,18 +37,6 @@ int listaRetornaBusca(lista *l, int(*func)(void *, void *), void *param) {
 	return 0;
 }
 
-/* void* listaRetorna(lista *l) {
- celula *p, *aux;
-
- p = l->inicio->prox;
- if (p != NULL) {
- l->inicio->prox = p->prox;
- aux = p;
- return p->data;
- }
- return NULL;
- }*/
-
 void listaRetorna(lista *l, int *v) {
 	celula *p, *aux;
 
@@ -69,7 +57,7 @@ void listaRetorna(lista *l, int *v) {
 }
 
 void listaRetornaSimetrico(lista *l, int *v) {
-	celula *p, *aux, *aux2, *aux3;
+	celula *p, *aux;
 
 	p = l->inicio;
 	while (p->prox != NULL) {

@@ -20,7 +20,7 @@ int main(int argc, char **argv) {
 	int nElementos, e1, e2;
 	int i;
 	int reflexiva, irreflexiva, simetrica, assimetrica, antiSimetrica,
-			transitiva, equivalencia, ordemParcial;
+			transitiva;
 	int *elementos;
 	grafo relacoes;
 	lista pares;
@@ -53,7 +53,7 @@ int main(int argc, char **argv) {
 	} while (!feof(entrada));
 	fclose(entrada);
 
-	grafoImprime(&relacoes);
+	//grafoImprime(&relacoes);
 
 	listaCria(&pares);
 
@@ -104,6 +104,37 @@ int main(int argc, char **argv) {
 		printf("V");
 		printf("\n");
 	}
+	
+  printf("5. Assimétrica: ");
+	assimetrica = avaliaAssimetrica(&relacoes, &pares);
+	if (!assimetrica) {
+		printf("F\n");
+		//listaRetorna(&pares, elementos);
+		//printf("\n");
+	} else {
+		printf("V");
+		printf("\n");
+  }
+
+  printf("6. Transitiva: ");
+	transitiva = avaliaTransitiva(&relacoes, &pares);
+	if (!transitiva) {
+		printf("F\n   ");
+		listaRetorna(&pares, elementos);
+		printf("\n");
+	} else {
+		printf("V");
+		printf("\n");
+  }
+  printf("\n");
+
+  printf("Relação de equivalência: %c\n", avaliaEquivalencia(reflexiva, simetrica, transitiva));
+  printf("Relação de ordem parcial: %c\n", avaliaOrdemParcial(reflexiva, antiSimetrica, transitiva));
+  printf("\n");
+
+  printf("Fecho transitivo da relação = {");
+  printf("}\n");
+
 
 	// libera meméria
 	free(elementos);

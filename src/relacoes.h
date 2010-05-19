@@ -10,5 +10,8 @@ int avaliaSimetrica(grafo*, lista*);
 int avaliaAssimetrica(grafo*, lista*);
 int avaliaAntiSimetrica(grafo*, lista*);
 int avaliaTransitiva(grafo*, lista*);
+char avaliaEquivalencia(int, int, int);
+char avaliaOrdemParcial(int, int, int);
 
 #endif
+
