@@ -66,8 +66,6 @@ void listaRetornaSimetrico(lista *l, int *v) {
 		p->prox = aux->prox;
 
 		listaMostraRegistroSimetrico(aux->data, v);
-		//remove registro simetrico da lista
-		//TODO: remover registros simetricos
 
 		if (aux == l->fim)
 			l->fim = p;
