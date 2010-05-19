@@ -7,19 +7,22 @@ C_SRCS += \
 ../src/grafo.c \
 ../src/io.c \
 ../src/lista.c \
-../src/main.c 
+../src/main.c \
+../src/relacoes.c 
 
 OBJS += \
 ./src/grafo.o \
 ./src/io.o \
 ./src/lista.o \
-./src/main.o 
+./src/main.o \
+./src/relacoes.o 
 
 C_DEPS += \
 ./src/grafo.d \
 ./src/io.d \
 ./src/lista.d \
-./src/main.d 
+./src/main.d \
+./src/relacoes.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

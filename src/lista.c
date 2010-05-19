@@ -110,15 +110,15 @@ void listaFree(lista *l) {
 }
 
 int compareSimetrico(void *x, void *y) {
-   if (((par*)x)->a == ((par*)y)->b && ((par*)x)->b == ((par*)y)->a)
-     return 1;
-   return 0;
-}   
+	if (((par*) x)->a == ((par*) y)->b && ((par*) x)->b == ((par*) y)->a)
+		return 1;
+	return 0;
+}
 
 int compare(void *x, void *y) {
-   if (((par*)x)->a == ((par*)y)->a && ((par*)x)->b == ((par*)y)->b)
-     return 1;
-   return 0;
+	if (((par*) x)->a == ((par*) y)->a && ((par*) x)->b == ((par*) y)->b)
+		return 1;
+	return 0;
 }
 
 /**

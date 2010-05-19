@@ -54,7 +54,7 @@ int main(int argc, char **argv) {
 	fclose(entrada);
 
 	listaCria(&pares);
-  listaCria(&fechoTransitivo);
+	listaCria(&fechoTransitivo);
 
 	/**
 	 * Aqui começa a geração da saída
@@ -103,17 +103,17 @@ int main(int argc, char **argv) {
 		printf("V");
 		printf("\n");
 	}
-	
-  printf("5. Assimétrica: ");
+
+	printf("5. Assimétrica: ");
 	assimetrica = avaliaAssimetrica(&relacoes, &pares);
 	if (!assimetrica) {
 		printf("F\n");
 	} else {
 		printf("V");
 		printf("\n");
-  }
+	}
 
-  printf("6. Transitiva: ");
+	printf("6. Transitiva: ");
 	transitiva = avaliaTransitiva(&relacoes, &pares, &fechoTransitivo);
 	if (!transitiva) {
 		printf("F\n   ");
@@ -122,23 +122,24 @@ int main(int argc, char **argv) {
 	} else {
 		printf("V");
 		printf("\n");
-  }
-  printf("\n");
+	}
+	printf("\n");
 
-  printf("Relação de equivalência: %c\n", avaliaEquivalencia(reflexiva, simetrica, transitiva));
-  printf("Relação de ordem parcial: %c\n", avaliaOrdemParcial(reflexiva, antiSimetrica, transitiva));
-  printf("\n");
+	printf("Relação de equivalência: %c\n", avaliaEquivalencia(reflexiva,
+			simetrica, transitiva));
+	printf("Relação de ordem parcial: %c\n", avaliaOrdemParcial(reflexiva,
+			antiSimetrica, transitiva));
+	printf("\n");
 
-  printf("Fecho transitivo da relação = {");
-  listaRetorna(&fechoTransitivo, elementos);
-  printf("}\n");
-
+	printf("Fecho transitivo da relação = {");
+	listaRetorna(&fechoTransitivo, elementos);
+	printf("}\n");
 
 	// libera memória
 	free(elementos);
-  grafoFree(&relacoes);
-  listaFree(&pares);
-  listaFree(&fechoTransitivo);
+	grafoFree(&relacoes);
+	listaFree(&pares);
+	listaFree(&fechoTransitivo);
 
 	return EXIT_SUCCESS;
 }
