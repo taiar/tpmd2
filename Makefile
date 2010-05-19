@@ -19,4 +19,4 @@ run: all
 	./tpmd ./entradas/e1
 
 clean:
-	rm -rf tpmd $(SRCDIR)*.o $(SRCDIR)*.mk $(SRCDIR)*.d $(SRCDIR)*.h.* $(SRCDIR)*.o.* $(BINDIR)*.o
+	rm -rf tpmd $(SRCDIR)*.o $(SRCDIR)*.mk $(SRCDIR)*.d $(SRCDIR)*.h.* $(SRCDIR)*.o.* $(BINDIR)*.o ./Debug/*
