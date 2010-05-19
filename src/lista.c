@@ -25,16 +25,16 @@ void listaInsere(lista *l, void *data, unsigned int size) {
 }
 
 // atenção para a passagem de função como parâmetro!!
-void* listaRetornaBusca(lista *l, int(*func)(void *, void *), void *param) {
+int listaRetornaBusca(lista *l, int(*func)(void *, void *), void *param) {
 	celula *p;
 
 	p = l->inicio->prox;
 	while (p != NULL) {
 		if (func(p->data, param))
-			return p->data;
+			return 1;
 		p = p->prox;
 	}
-	return NULL;
+	return 0;
 }
 
 /* void* listaRetorna(lista *l) {
@@ -120,6 +120,13 @@ void listaFree(lista *l) {
 	}
 	free(l->inicio);
 }
+
+int compareSimetrico(void *x, void *y) {
+   if (((par*)x)->a == ((par*)y)->b && ((par*)x)->b == ((par*)y)->a)
+     return 1;
+   return 0;
+}   
+
 
 /**
  * Métodos relativos à inserção de items na lista
