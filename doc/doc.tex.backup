@@ -70,34 +70,18 @@ do programa e um módulo com a implementação da análise das relações utiliz
 Vamos supor um conjunto com os seguintes elementos: $A = {1,2,3,4,5}$
 
 Vamos dispor esses elementos numa tabela da seguinte forma:
-
 \begin{center}
-\begin{tabular}{llllll}
-* & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5}\\
-\textbf{1} & 0 & 0 & 0 & 0 & 0\\
-\textbf{2} & 0 & 0 & 0 & 0 & 0\\
-\textbf{3} & 0 & 0 & 0 & 0 & 0\\
-\textbf{4} & 0 & 0 & 0 & 0 & 0\\
-\textbf{5} & 0 & 0 & 0 & 0 & 0
-\end{tabular}
+\begin{array}
+'' & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5}\\
+\textbf{1} &  &  &  &  & \\
+\textbf{2} &  &  &  &  & \\
+\textbf{3} &  &  &  &  & \\
+\textbf{4} &  &  &  &  & \\
+\textbf{5} &  &  &  &  &
+\end{array}
 \end{center}
 
-Em nossa implementação, se temos dois elementos relacionados, marcamos as célula em comum dos dois elementos com o valor 1. Por exemplo, vamos relacionar os elementos da seguinte forma:
-
-$\forall x \in A, (x, x) \in A$
-
-Na matriz ficaria:
-
-\begin{center}
-\begin{tabular}{llllll}
-* & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5}\\
-\textbf{1} & 1 & 0 & 0 & 0 & 0\\
-\textbf{2} & 0 & 1 & 0 & 0 & 0\\
-\textbf{3} & 0 & 0 & 1 & 0 & 0\\
-\textbf{4} & 0 & 0 & 0 & 1 & 0\\
-\textbf{5} & 0 & 0 & 0 & 0 & 1
-\end{tabular}
-\end{center}
+Em nossa implementação, se temos um elemento do conjunto relacionado com outro, marcamos as célula em comum dos dois elementos com o valor 1.
 
 \subsection{Lista encadeada}
 

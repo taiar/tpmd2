@@ -84,7 +84,7 @@ Vamos dispor esses elementos numa tabela da seguinte forma:
 
 Em nossa implementação, se temos dois elementos relacionados, marcamos as célula em comum dos dois elementos com o valor 1. Por exemplo, vamos relacionar os elementos da seguinte forma:
 
-$\forall x \in A, (x, x) \in A$
+$\forall x e A, (x, x) e A$
 
 Na matriz ficaria:
 
