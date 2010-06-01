@@ -84,7 +84,7 @@ Vamos dispor esses elementos numa tabela da seguinte forma:
 
 Em nossa implementação, se temos dois elementos relacionados, marcamos as célula em comum dos dois elementos com o valor 1. Por exemplo, vamos relacionar os elementos da seguinte forma:
 
-$\forall x e A, (x, x) e A$
+$\forall x \in A, (x, x) \in A$
 
 Na matriz ficaria:
 
@@ -101,84 +101,17 @@ Na matriz ficaria:
 
 \subsection{Lista encadeada}
 
+As listas encadeadas foram utilizadas no programa para armazenar pares ordenados dos elementos dos conjuntos que inicialmente não temos idéia de quantos serão.
+Por exemplo: ao analisar os pares que faltam para completar um fecho transitivo, como não temos certeza da quantidade de pares que irão faltar, utilizamos uma
+lista encadeada, que é uma estrutura de dados dinâmica (pois trabalha com alocação dinâmica de memória) para armazenar quantos pares quisermos e, ao final, fazer
+a listagem de todos eles.
+
 \subsection{Análise das relações}
 
-\section{CD-ROMs and Printed Proceedings}
+Com o grafo implementado como uma matriz de adjacência, verificar as relações entre os elementos foram operações simples e pouco custosas (se resumem a trabalhar
+com os índices correspondentes aos elementos e avaliar se o valor da célula da aresta correspondente estava ligada ou desligada). Não tenho certeza se trabalhei
+com os melhores algoritmos para as avaliações mas eles estão funcionando corretamente para todos os testes que efetuei.
 
-In some conferences, the papers are published on CD-ROM while only the
-abstract is published in the printed Proceedings. In this case, authors are
-invited to prepare two final versions of the paper. One, complete, to be
-published on the CD and the other, containing only the first page, with
-abstract and ``resumo'' (for papers in Portuguese).
-
-\section{Sections and Paragraphs}
-
-Section titles must be in boldface, 13pt, flush left. There should be an extra
-12 pt of space before each title. Section numbering is optional. The first
-paragraph of each section should not be indented, while the first lines of
-subsequent paragraphs should be indented by 1.27 cm.
-
-\subsection{Subsections}
-
-The subsection titles must be in boldface, 12pt, flush left.
-
-\section{Figures and Captions}\label{sec:figs}
-
-
-Figure and table captions should be centered if less than one line
-(Figure~\ref{fig:exampleFig1}), otherwise justified and indented by 0.8cm on
-both margins, as shown in Figure~\ref{fig:exampleFig2}. The caption font must
-be Helvetica, 10 point, boldface, with 6 points of space before and after each
-caption.
-
-\begin{figure}[ht]
-\centering
-\includegraphics[width=.5\textwidth]{fig1.jpg}
-\caption{A typical figure}
-\label{fig:exampleFig1}
-\end{figure}
-
-\begin{figure}[ht]
-\centering
-\includegraphics[width=.3\textwidth]{fig2.jpg}
-\caption{This figure is an example of a figure caption taking more than one
-  line and justified considering margins mentioned in Section~\ref{sec:figs}.}
-\label{fig:exampleFig2}
-\end{figure}
-
-In tables, try to avoid the use of colored or shaded backgrounds, and avoid
-thick, doubled, or unnecessary framing lines. When reporting empirical data,
-do not use more decimal digits than warranted by their precision and
-reproducibility. Table caption must be placed before the table (see Table 1)
-and the font used must also be Helvetica, 10 point, boldface, with 6 points of
-space before and after each caption.
-
-\begin{table}[ht]
-\centering
-\caption{Variables to be considered on the evaluation of interaction
-  techniques}
-\label{tab:exTable1}
-\includegraphics[width=.7\textwidth]{table.jpg}
-\end{table}
-
-\section{Images}
-
-All images and illustrations should be in black-and-white, or gray tones,
-excepting for the papers that will be electronically available (on CD-ROMs,
-internet, etc.). The image resolution on paper should be about 600 dpi for
-black-and-white images, and 150-300 dpi for grayscale images.  Do not include
-images with excessive resolution, as they may take hours to print, without any
-visible difference in the result.
-
-\section{References}
-
-Bibliographic references must be unambiguous and uniform.  We recommend giving
-the author names references in brackets, e.g. \cite{knuth:84},
-\cite{boulic:91}, and \cite{smith:99}.
-
-The references must be listed using 12 point font size, with 6 points of space
-before each reference. The first line of each reference should not be
-indented, while the subsequent should be indented by 0.5 cm.
 
 \bibliographystyle{sbc}
 \bibliography{sbc-template}

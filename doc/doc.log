@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.5.20)  1 JUN 2010 13:13
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.5.20)  1 JUN 2010 17:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -305,11 +305,7 @@ Now handling font encoding U ...
    defining Unicode char U+2026 (decimal 8230)
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
-)) (./doc.aux
-
-LaTeX Warning: Label `fig:exampleFig1' multiply defined.
-
-)
+)) (./doc.aux)
 \openout1 = `doc.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
@@ -325,7 +321,8 @@ LaTeX Font Info:    ... okay on input line 22.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
 LaTeX Font Info:    ... okay on input line 22.
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 22.
- (/usr/share/texmf-texlive/tex/latex/psnfss/ot1ptm.fd
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 *geometry auto-detecting driver*
@@ -417,51 +414,32 @@ LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./grafoEx.png>]
-<fig1.jpg, id=15, 254.3904pt x 232.2276pt>
-File: fig1.jpg Graphic file (type jpg)
- <use fig1.jpg>
-<fig2.jpg, id=16, 205.7286pt x 234.1548pt>
-File: fig2.jpg Graphic file (type jpg)
- <use fig2.jpg>
-<table.jpg, id=17, 365.2044pt x 217.2918pt>
-File: table.jpg Graphic file (type jpg)
- <use table.jpg> [2]
-Underfull \hbox (badness 2529) in paragraph at lines 175--178
- \OT1/ptm/b/n/13 7 Ref-er-ences[] \OT1/ptm/m/n/12 Bib-li-o-graphic ref-er-ences
- must be un-am-bigu-ous and uni-form. We
+Underfull \hbox (badness 2119) in paragraph at lines 104--108
+ \OT1/ptm/b/n/12 2.2 Lista en-cadeada[] \OT1/ptm/m/n/12 As lis-tas en-cadeadas 
+foram uti-lizadas no pro-grama para ar-
  []
 
-
-Underfull \hbox (badness 1436) in paragraph at lines 175--178
-\OT1/ptm/m/n/12 rec-om-mend giv-ing the au-thor names ref-er-ences in brack-ets
-, e.g. [[]],
- []
-
-(./doc.bbl [3 <./fig1.jpg> <./fig2.jpg>]) [4 <./table.jpg>] (./doc.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+[2] (./doc.aux) ) 
 Here is how much of TeX's memory you used:
- 1939 strings out of 495061
- 24665 string characters out of 1182621
- 80644 words of memory out of 3000000
- 5094 multiletter control sequences out of 15000+50000
+ 1918 strings out of 495061
+ 24425 string characters out of 1182621
+ 79581 words of memory out of 3000000
+ 5079 multiletter control sequences out of 15000+50000
  21033 words of font info for 44 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 30i,10n,21p,261b,308s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texli
-ve/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-texlive/fonts/ty
-pe1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/public/a
-msfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cm
-sy10.pfb></usr/share/texmf-texlive/fonts/type1/urw/courier/ucrr8a.pfb></usr/sha
-re/texmf-texlive/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-texlive/
-fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/time
-s/utmbi8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/
-share/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
-Output written on doc.pdf (4 pages, 237581 bytes).
+ 30i,10n,21p,207b,308s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/sh
+are/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-t
+exlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts
+/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/public
+/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/urw/courier/ucrr8
+a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share
+/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/fonts
+/type1/urw/times/utmbi8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/ut
+mr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
+Output written on doc.pdf (2 pages, 111499 bytes).
 PDF statistics:
- 62 PDF objects out of 1000 (max. 8388607)
+ 53 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
