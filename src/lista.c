@@ -137,3 +137,8 @@ void listaMostraRegistro(par *p, int *v) {
 void listaMostraRegistroSimetrico(par *p, int *v) {
 	printf("(%d, %d) e (%d, %d); ", v[p->a], v[p->b], v[p->b], v[p->a]);
 }
+
+// asidashdauishduia hsduihasudh aisdh a
+// asidh ashda isdhuish
+// asd uhasudhauid h
+//
