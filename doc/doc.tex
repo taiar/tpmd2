@@ -120,6 +120,38 @@ correspondente estava ligada ou desligada). Não tenho certeza se trabalhei
 com os melhores algoritmos para as avaliações mas eles estão funcionando corretamente 
 para todos os testes que efetuei.
 
-\subsubsection{}
+\subsubsection{Reflexiva}
+Para avaliar se a relação é \textbf{reflexiva} bastou verificar se toda a
+diagonal principal da matriz tinha o valor 1 o que significa que todos os
+elementos são relacionados si próprios.
+
+\subsubsection{Irreflexiva}
+Para avaliar se a relação é \textbf{irreflexiva} bastou verificar se toda a
+diagonal principal da matriz tinha o valor 0 o que significa que nenhum dos
+elementos é relacionado com si próprio.
+
+\subsubsection{Simétrica}
+Para avaliar se a relação é \textbf{simétrica}, verifiquei se a matriz era
+simétrica em relação à diagonal principal, ou seja: se a posição
+$[i,j]$ da matriz estava relacionada com a posição $[j,i]$.
+
+\subsubsection{Anti-Simétrica}
+Para avaliar se a relação é \textbf{anti-simétrica}, procurei por pares tais que
+$[i,j] = [j,i]$. Caso encontrasse algum, comparava se $i = j$. Caso verdadeiro,
+para todos os pares, a relação é dita anti-simétrica.
+
+\subsubsection{Assimétrica}
+Para avaliar se a relação é \textbf{assimétrica}, verifiquei se a matriz não
+tinha simetria com relação à diagonal principal, ou seja, verificar se todas as
+posições $[i,j]$ eram diferentes das posições $[j,i]$.
+
+\subsubsection{Transitiva}
+Para avaliar se a relação é \textbf{transitiva}, verifiquei para todas as
+posições $[i,j]$ se existia uma posição $[j,k]$ válida. Caso sim, verificava se
+a posição $[i,k]$ também era válida. Caso isso acontecesse para todas
+permutações de $i, j, k$ válidas, a relação é dita transitiva.
+
+\subsubsection{Fecho Transitivo}
+Para avaliar o \textbf{fecho transitivo} da relação
 
 \end{document}
