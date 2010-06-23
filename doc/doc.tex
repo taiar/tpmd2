@@ -82,9 +82,11 @@ Vamos dispor esses elementos numa tabela da seguinte forma:
 \end{tabular}
 \end{center}
 
-Em nossa implementação, se temos dois elementos relacionados, marcamos as célula em comum dos dois elementos com o valor 1. Por exemplo, vamos relacionar os elementos da seguinte forma:
+Em nossa implementação, se temos dois elementos relacionados, marcamos as célula em 
+comum dos dois elementos com o valor 1. Por exemplo, vamos relacionar os elementos da 
+seguinte forma:
 
-$\forall x \in A, (x, x) \in A$
+$\forall x \in A, (x, x) \in R$
 
 Na matriz ficaria:
 
@@ -101,16 +103,23 @@ Na matriz ficaria:
 
 \subsection{Lista encadeada}
 
-As listas encadeadas foram utilizadas no programa para armazenar pares ordenados dos elementos dos conjuntos que inicialmente não temos idéia de quantos serão.
-Por exemplo: ao analisar os pares que faltam para completar um fecho transitivo, como não temos certeza da quantidade de pares que irão faltar, utilizamos uma
-lista encadeada, que é uma estrutura de dados dinâmica (pois trabalha com alocação dinâmica de memória) para armazenar quantos pares quisermos e, ao final, fazer
+As listas encadeadas foram utilizadas no programa para armazenar pares ordenados dos 
+elementos dos conjuntos que inicialmente não temos idéia de quantos serão.
+Por exemplo: ao analisar os pares que faltam para completar um fecho transitivo, 
+como não temos certeza da quantidade de pares que irão faltar, utilizamos uma
+lista encadeada, que é uma estrutura de dados dinâmica (pois trabalha com alocação 
+dinâmica de memória) para armazenar quantos pares quisermos e, ao final, fazer
 a listagem de todos eles.
 
 \subsection{Análise das relações}
 
-Com o grafo implementado como uma matriz de adjacência, verificar as relações entre os elementos foram operações simples e pouco custosas (se resumem a trabalhar
-com os índices correspondentes aos elementos e avaliar se o valor da célula da aresta correspondente estava ligada ou desligada). Não tenho certeza se trabalhei
-com os melhores algoritmos para as avaliações mas eles estão funcionando corretamente para todos os testes que efetuei.
+Com o grafo implementado como uma matriz de adjacência, verificar as relações entre 
+os elementos foram operações simples e pouco custosas (se resumem a trabalhar
+com os índices correspondentes aos elementos e avaliar se o valor da célula da aresta 
+correspondente estava ligada ou desligada). Não tenho certeza se trabalhei
+com os melhores algoritmos para as avaliações mas eles estão funcionando corretamente 
+para todos os testes que efetuei.
 
+\subsubsection{}
 
 \end{document}
