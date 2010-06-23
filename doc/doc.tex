@@ -34,7 +34,6 @@ Gerais (UFMG)\\
 
 
 \section{Relações em grafos} %mudar esse título
-
 Em matemática e ciência da computação, grafo é o objeto básico de estudo da
 teoria dos grafos. Tipicamente, um grafo é representado como um conjunto de
 pontos (vértices) ligados por retas (as arestas).
@@ -56,7 +55,6 @@ utilizando uma matriz de adjacência como veremos no detalhamento das estruturas
 dados.
 
 \section{Estruturas de dados e implementações}
-
 O programa foi desenvolvido em 4 módulos: o módulo principal que cuida da leitura
 do arquivo de entrada, da geração da saída e da lógica do funcionamento do programa
 em si, o módulo que contém a implementação do grafo por matriz de adjacência, um
@@ -64,9 +62,7 @@ módulo com a implementação de uma lista encadeada utilizada em diversas parte
 do programa e um módulo com a implementação da análise das relações utilizando o grafo.
 
 \subsection{Implementação do grafo}
-
 \subsubsection{Matriz de adjacência}
-
 Vamos supor um conjunto com os seguintes elementos: $A = {1,2,3,4,5}$
 
 Vamos dispor esses elementos numa tabela da seguinte forma:
@@ -102,7 +98,6 @@ Na matriz ficaria:
 \end{center}
 
 \subsection{Lista encadeada}
-
 As listas encadeadas foram utilizadas no programa para armazenar pares ordenados dos 
 elementos dos conjuntos que inicialmente não temos idéia de quantos serão.
 Por exemplo: ao analisar os pares que faltam para completar um fecho transitivo, 
@@ -112,7 +107,6 @@ dinâmica de memória) para armazenar quantos pares quisermos e, ao final, fazer
 a listagem de todos eles.
 
 \subsection{Análise das relações}
-
 Com o grafo implementado como uma matriz de adjacência, verificar as relações entre 
 os elementos foram operações simples e pouco custosas (se resumem a trabalhar
 com os índices correspondentes aos elementos e avaliar se o valor da célula da aresta 
@@ -152,6 +146,11 @@ a posição $[i,k]$ também era válida. Caso isso acontecesse para todas
 permutações de $i, j, k$ válidas, a relação é dita transitiva.
 
 \subsubsection{Fecho Transitivo}
-Para avaliar o \textbf{fecho transitivo} da relação
+Para avaliar o \textbf{fecho transitivo} da relação utilizei o mesmo algoritmo
+usado na verificação da \textbf{relação de transitividade}, porém, ao encontrar
+uma aresta ausente que faça com que a relação de transitividade seja anulada,
+adicionamos essa aresta ao grafo e reavaliamos para saber se há alguma outra
+aresta ausente que atrapalhe a relação. As arestas que incluímos no grafo depois
+de todo o processo formam o fecho transitivo da relação.
 
 \end{document}
