@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.6.1)  23 JUN 2010 12:23
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2010.6.1)  23 JUN 2010 18:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -425,27 +425,27 @@ Underfull \hbox (badness 2119) in paragraph at lines 106--113
 foram uti-lizadas no pro-grama para ar-
  []
 
-[2] (./doc.aux) ) 
+[2] [3] (./doc.aux) ) 
 Here is how much of TeX's memory you used:
- 1915 strings out of 493848
- 24394 string characters out of 1152824
- 80502 words of memory out of 3000000
- 5175 multiletter control sequences out of 15000+50000
+ 1916 strings out of 493848
+ 24402 string characters out of 1152824
+ 81502 words of memory out of 3000000
+ 5176 multiletter control sequences out of 15000+50000
  21033 words of font info for 44 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
  30i,10n,21p,207b,308s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/sh
-are/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-t
-exlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts
-/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/public
-/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/urw/courier/ucrr8
-a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share
-/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/fonts
-/type1/urw/times/utmbi8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/ut
-mr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
-Output written on doc.pdf (2 pages, 111785 bytes).
+{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</us
+r/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/tex
+mf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/f
+onts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/pu
+blic/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/urw/courier/u
+crr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/s
+hare/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/f
+onts/type1/urw/times/utmbi8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/time
+s/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
+Output written on doc.pdf (3 pages, 117426 bytes).
 PDF statistics:
- 53 PDF objects out of 1000 (max. 8388607)
+ 56 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
