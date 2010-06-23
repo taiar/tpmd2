@@ -30,8 +30,8 @@ int listaRemoveBusca(lista*, int(*func)(void*, void*), void*);
 int listaBusca(lista*, int, int);
 int listaRemove(lista*, void*);
 void listaFree(lista*);
-int compare(void*,void*);
-int compareSimetrico(void*,void*);
+int compare(void*, void*);
+int compareSimetrico(void*, void*);
 
 /**
  * Métodos relativos à inserção de items na lista

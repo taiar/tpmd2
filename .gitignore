@@ -1,1 +1,6 @@
+./Debug/*.*
+Release/*
 *.*.swp
+*.o
+*.d
+*.mk

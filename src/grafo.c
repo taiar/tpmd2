@@ -40,8 +40,8 @@ void grafoImprime(grafo *g) {
 }
 
 void grafoFree(grafo *g) {
-  int i;
-  for(i = 0; i < g->nNos; i += 1)
-    free(g->matriz[i]);
-  free(g->matriz);  
+	int i;
+	for (i = 0; i < g->nNos; i += 1)
+		free(g->matriz[i]);
+	free(g->matriz);
 }
