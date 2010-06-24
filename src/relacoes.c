@@ -130,7 +130,10 @@ void avaliaFechoTransitivo(grafo g, lista *guardaFecho)
 
   /**
    * 1 - tirar um par da bufferFecho
+   *   |____> implementar método que remove 1 item da lista
+   *
    * 2 - inserir o par no grafo
+   *
    * 3 - recalcular os pares com o novo grafo
    */
 
