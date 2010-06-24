@@ -23,7 +23,7 @@ int main(int argc, char **argv) {
 			transitiva;
 	int *elementos;
 	grafo relacoes;
-	lista pares, fechoTransitivo, fT;
+	lista pares, fT;
 
 	entrada = fopen(argv[1], "r");
 
@@ -54,7 +54,6 @@ int main(int argc, char **argv) {
 	fclose(entrada);
 
 	listaCria(&pares);
-	listaCria(&fechoTransitivo);
 	listaCria(&fT);
 
 	/**
@@ -115,7 +114,7 @@ int main(int argc, char **argv) {
 	}
 
 	printf("6. Transitiva: ");
-	transitiva = avaliaTransitiva(&relacoes, &pares, &fechoTransitivo);
+	transitiva = avaliaTransitiva(&relacoes, &pares);
 	if (!transitiva) {
 		printf("F\n   ");
 		listaRetorna(&pares, elementos);
@@ -141,7 +140,7 @@ int main(int argc, char **argv) {
 	free(elementos);
 	grafoFree(&relacoes);
 	listaFree(&pares);
-	listaFree(&fechoTransitivo);
+	listaFree(&fT);
 
 	return EXIT_SUCCESS;
 }

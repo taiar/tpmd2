@@ -70,7 +70,7 @@ int avaliaAssimetrica(grafo *g, lista *l) {
 	return okFlag;
 }
 
-int avaliaTransitiva(grafo *g, lista *l, lista *s) {
+int avaliaTransitiva(grafo *g, lista *l) {
 	int i, j, k, okFlag = 1;
 	par *a = malloc(sizeof(par));
 	for (i = 0; i < g->nNos; i += 1) {
@@ -82,9 +82,8 @@ int avaliaTransitiva(grafo *g, lista *l, lista *s) {
 							okFlag = 0;
 							a->a = i;
 							a->b = k;
-							if (!listaRetornaBusca(s, compare, (void *) a)) {
+							if (!listaRetornaBusca(l, compare, (void *) a)) {
 								listaInsereRegistro(l, i, k);
-								listaInsereRegistro(s, i, k);
 							}
 						}
 					}

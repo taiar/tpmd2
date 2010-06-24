@@ -9,7 +9,7 @@ int avaliaIrreflexiva(grafo*, lista*);
 int avaliaSimetrica(grafo*, lista*);
 int avaliaAssimetrica(grafo*, lista*);
 int avaliaAntiSimetrica(grafo*, lista*);
-int avaliaTransitiva(grafo*, lista*, lista*);
+int avaliaTransitiva(grafo*, lista*);
 void pegaParesIntransitivos(grafo*, lista*, lista*);
 void avaliaFechoTransitivo(grafo g, lista*);
 char avaliaEquivalencia(int, int, int);
