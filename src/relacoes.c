@@ -132,7 +132,6 @@ void avaliaFechoTransitivo(grafo g, lista *guardaFecho)
   
   while(bufferFecho.tam > 1)
   {
-    printf("rerere\n");
     listaPegaPar(&bufferFecho, &p);
     g.matriz[p.a][p.b] = 1;
     pegaParesIntransitivos(&g, guardaFecho, &bufferFecho);
