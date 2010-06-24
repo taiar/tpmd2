@@ -96,6 +96,51 @@ int avaliaTransitiva(grafo *g, lista *l, lista *s) {
 	return okFlag;
 }
 
+void pegaParesIntransitivos(grafo *g, lista *l, lista *g)
+{
+  int i, j, k, okFlag = 1;
+	par *a = malloc(sizeof(par));
+	for (i = 0; i < g->nNos; i += 1) {
+		for (j = 0; j < g->nNos; j += 1) {
+			for (k = 0; k < g->nNos; k += 1) {
+				if (g->matriz[i][j] == 1) {
+					if (g->matriz[j][k] == 1) {
+						if (g->matriz[i][k] != 1) {
+							okFlag = 0;
+							a->a = i;
+							a->b = k;
+							if (!listaRetornaBusca(s, compare, (void *) a)) {
+								listaInsereRegistro(l, i, k);
+								listaInsereRegistro(s, i, k);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	free(a);
+}
+
+void avaliaFechoTransitivo(grafo g, lista *guardaFecho)
+{
+  lista bufferFecho;
+  listaCria(bufferFecho);
+  pegaParesIntransitivos(&g, guardaFecho, &bufferFecho);
+
+  /**
+   * 1 - tirar um par da bufferFecho
+   * 2 - inserir o par no grafo
+   * 3 - recalcular os pares com o novo grafo
+   */
+
+  while(!listaVazia(&bufferFecho))
+  {
+    pegaParesIntransitivos(&g, guardaFecho, &bufferFecho);
+  }
+
+}
+
 char avaliaEquivalencia(int ref, int sim, int trans) {
 	if (ref && sim && trans)
 		return 'V';
