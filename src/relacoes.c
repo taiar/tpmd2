@@ -96,7 +96,7 @@ int avaliaTransitiva(grafo *g, lista *l, lista *s) {
 	return okFlag;
 }
 
-void pegaParesIntransitivos(grafo *g, lista *l, lista *g)
+void pegaParesIntransitivos(grafo *g, lista *l, lista *s)
 {
   int i, j, k, okFlag = 1;
 	par *a = malloc(sizeof(par));
@@ -125,23 +125,17 @@ void pegaParesIntransitivos(grafo *g, lista *l, lista *g)
 void avaliaFechoTransitivo(grafo g, lista *guardaFecho)
 {
   lista bufferFecho;
-  listaCria(bufferFecho);
+  par p;
+
+  listaCria(&bufferFecho);
   pegaParesIntransitivos(&g, guardaFecho, &bufferFecho);
-
-  /**
-   * 1 - tirar um par da bufferFecho
-   *   |____> implementar método que remove 1 item da lista
-   *
-   * 2 - inserir o par no grafo
-   *
-   * 3 - recalcular os pares com o novo grafo
-   */
-
+  
   while(!listaVazia(&bufferFecho))
   {
+    listaPegaPar(&bufferFecho, &p);
+    g.matriz[p.a][p.b] = 1;
     pegaParesIntransitivos(&g, guardaFecho, &bufferFecho);
   }
-
 }
 
 char avaliaEquivalencia(int ref, int sim, int trans) {

@@ -23,7 +23,7 @@ int main(int argc, char **argv) {
 			transitiva;
 	int *elementos;
 	grafo relacoes;
-	lista pares, fechoTransitivo;
+	lista pares, fechoTransitivo, fT;
 
 	entrada = fopen(argv[1], "r");
 
@@ -55,6 +55,7 @@ int main(int argc, char **argv) {
 
 	listaCria(&pares);
 	listaCria(&fechoTransitivo);
+	listaCria(&fT);
 
 	/**
 	 * Aqui começa a geração da saída
@@ -132,7 +133,8 @@ int main(int argc, char **argv) {
 	printf("\n");
 
 	printf("Fecho transitivo da relação = {");
-	listaRetorna(&fechoTransitivo, elementos);
+  avaliaFechoTransitivo(relacoes, &fT);
+	listaRetorna(&fT, elementos);
 	printf("}\n");
 
 	// libera memória

@@ -96,6 +96,17 @@ int listaRemoveBusca(lista *l, int(*func)(void *, void *), void *param) {
 	return 0;
 }
 
+
+void listaPegaPar(lista *l, par *p)
+{
+  celula *aux;
+  aux = l->inicio->prox;
+  p->a = ((par*) aux->data)->a;
+  p->b = ((par*) aux->data)->b;
+  l->inicio->prox = aux->prox;
+  free(aux);
+}
+
 void listaFree(lista *l) {
 	celula *aux;
 	while (l->inicio->prox != NULL) {
